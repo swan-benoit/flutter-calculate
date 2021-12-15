@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'widgets/CalculationDisplayer.dart';
+import 'widgets/keyboard.dart';
+import 'widgets/calculation-displayer.dart';
 
 
 class Calculator extends StatefulWidget {
@@ -23,6 +24,7 @@ class _Calculator extends State<Calculator> {
           padding:EdgeInsets.fromLTRB(35.0, 20, 35.0, 15),
           child: CalculationDisplayer(),
         )
+        , Keyboard()
       ],
     );
   }
