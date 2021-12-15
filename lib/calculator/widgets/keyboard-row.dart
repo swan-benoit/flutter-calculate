@@ -5,19 +5,22 @@ import 'package:flutter_calculate/calculator/widgets/keyboard-button.dart';
 class KeyboardRow extends StatelessWidget {
   List<Widget> children;
 
-  KeyboardRow({
-    Key? key,
-    required this.children
-  }) : super(key: key);
+  KeyboardRow({Key? key, required this.children}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: children,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10.0),
+      child: Row(
+        children: children
+            .map((widget) => Padding(
+                  padding: const EdgeInsets.only(right: 10),
+                  child: widget,
+                ))
+            .toList(),
+      ),
     );
   }
 
-  void addToExpression() {
-  }
+  void addToExpression() {}
 }
