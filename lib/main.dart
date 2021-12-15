@@ -12,13 +12,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Calculatrice'),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.save),
+              onPressed: () {
+                print("click");
+              },
+            ),
+          ],
         ),
         body: const Calculator(),
       ),
