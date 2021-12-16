@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class CalculationDisplayer extends StatelessWidget {
-  String expression;
-  CalculationDisplayer({
-    Key? key,
-    this.expression = ''
-  }) : super(key: key);
+class CalculationDisplayer extends StatefulWidget {
+  String currentNumber;
+  CalculationDisplayer({Key? key, this.currentNumber = ''}) : super(key: key);
 
+  @override
+  State<CalculationDisplayer> createState() => _CalculationDisplayerState();
+}
+
+class _CalculationDisplayerState extends State<CalculationDisplayer> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,10 +28,10 @@ class CalculationDisplayer extends StatelessWidget {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
-          children: const [
+          children: [
             Text(
-              '129',
-              style: TextStyle(
+              widget.currentNumber,
+              style: const TextStyle(
                   color: Colors.black,
                   fontSize: 48,
                   fontWeight: FontWeight.bold),

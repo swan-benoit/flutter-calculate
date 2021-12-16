@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'widgets/keyboard.dart';
 import 'widgets/calculation-displayer.dart';
 
-
 class Calculator extends StatefulWidget {
-  String expression;
-  Calculator({Key? key, this.expression = ''}) : super(key: key);
+  String currentNumber;
+  Calculator({Key? key, this.currentNumber = ''}) : super(key: key);
 
   @override
   State<Calculator> createState() => _Calculator();
@@ -22,18 +21,30 @@ class _Calculator extends State<Calculator> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-       Padding(
-          padding:const EdgeInsets.fromLTRB(35.0, 20, 35.0, 15),
-          child: CalculationDisplayer(expression: widget.expression,),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(35.0, 20, 35.0, 15),
+          child: CalculationDisplayer(
+            currentNumber: widget.currentNumber,
+          ),
+        ),
+        Keyboard(
+          addToExpression: addToExpression,
         )
-        , Keyboard(addToExpression: addToExpression,)
       ],
     );
   }
 
   addToExpression(String content) {
-    print(content);
+    if (isNumber(content)) {
+      handleNumbers(content);
+    }
+  }
+
+  bool isNumber(String content) => double.tryParse(content) != null;
+
+  void handleNumbers(String content) {
+    setState(() {
+      widget.currentNumber = widget.currentNumber + content;
+    });
   }
 }
-
-
