@@ -3,7 +3,9 @@ import 'package:flutter/widgets.dart';
 
 class KeyboardButton extends StatefulWidget {
   bool isOutline;
-  KeyboardButton({Key? key, this.isOutline = false}) : super(key: key);
+  String content = '';
+  KeyboardButton({Key? key, this.isOutline = false, required this.content})
+      : super(key: key);
 
   @override
   State<KeyboardButton> createState() => _KeyboardButtonState();
@@ -19,16 +21,16 @@ class _KeyboardButtonState extends State<KeyboardButton> {
         child: widget.isOutline
             ? OutlinedButton(
                 onPressed: addToExpression,
-                child: const Text(
-                  '12',
-                  style: TextStyle(fontSize: 15.0),
+                child: Text(
+                  widget.content,
+                  style: const TextStyle(fontSize: 15.0),
                 ),
               )
             : ElevatedButton(
                 onPressed: addToExpression,
-                child: const Text(
-                  '12',
-                  style: TextStyle(fontSize: 15.0),
+                child: Text(
+                  widget.content,
+                  style: const TextStyle(fontSize: 15.0),
                 ),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black,

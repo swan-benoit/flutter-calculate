@@ -14,34 +14,41 @@ class Keyboard extends StatelessWidget {
       children: [
         KeyboardRow(
           children: [
-            KeyboardButton(),
-            KeyboardButton(),
-            KeyboardButton(),
-            KeyboardButton()
+            KeyboardButton(content: 'C', isOutline: true),
+            KeyboardButton(content: '(', isOutline: true),
+            KeyboardButton(content: ')', isOutline: true),
+            KeyboardButton(content: '/', isOutline: true)
           ],
         ),
         KeyboardRow(
           children: [
-            KeyboardButton(),
-            KeyboardButton(),
-            KeyboardButton(),
-            KeyboardButton()
+            KeyboardButton(content: '7'),
+            KeyboardButton(content: '8'),
+            KeyboardButton(content: '9'),
+            KeyboardButton(content: 'X', isOutline: true)
           ],
         ),
         KeyboardRow(
           children: [
-            KeyboardButton(),
-            KeyboardButton(),
-            KeyboardButton(),
-            KeyboardButton()
+            KeyboardButton(content: '4'),
+            KeyboardButton(content: '5'),
+            KeyboardButton(content: '6'),
+            KeyboardButton(content: '-', isOutline: true)
           ],
         ),
         KeyboardRow(
           children: [
-            KeyboardButton(),
-            KeyboardButton(),
-            KeyboardButton(),
-            KeyboardButton(isOutline: true)
+            KeyboardButton(content: '1'),
+            KeyboardButton(content: '2'),
+            KeyboardButton(content: '3'),
+            KeyboardButton(content: '+', isOutline: true)
+          ],
+        ),
+        KeyboardRow(
+          children: [
+            KeyboardButton(content: '0'),
+            KeyboardButton(content: '.'),
+            KeyboardButton(content: '=', isOutline: true)
           ],
         ),
         const SizedBox(
