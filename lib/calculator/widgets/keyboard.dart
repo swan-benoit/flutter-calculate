@@ -13,7 +13,7 @@ class Keyboard extends StatelessWidget {
     return Column(
       children: [
         KeyboardRow(
-          children: const [
+          children: [
             KeyboardButton(),
             KeyboardButton(),
             KeyboardButton(),
@@ -21,7 +21,7 @@ class Keyboard extends StatelessWidget {
           ],
         ),
         KeyboardRow(
-          children: const [
+          children: [
             KeyboardButton(),
             KeyboardButton(),
             KeyboardButton(),
@@ -29,7 +29,7 @@ class Keyboard extends StatelessWidget {
           ],
         ),
         KeyboardRow(
-          children: const [
+          children: [
             KeyboardButton(),
             KeyboardButton(),
             KeyboardButton(),
@@ -37,11 +37,11 @@ class Keyboard extends StatelessWidget {
           ],
         ),
         KeyboardRow(
-          children: const [
+          children: [
             KeyboardButton(),
             KeyboardButton(),
             KeyboardButton(),
-            KeyboardButton()
+            KeyboardButton(isOutline: true)
           ],
         ),
         const SizedBox(
