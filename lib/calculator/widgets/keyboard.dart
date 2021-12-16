@@ -46,7 +46,10 @@ class Keyboard extends StatelessWidget {
         ),
         KeyboardRow(
           children: [
-            KeyboardButton(content: '0'),
+            KeyboardButton(
+              content: '0',
+              grow: true,
+            ),
             KeyboardButton(content: '.'),
             KeyboardButton(content: '=', isOutline: true)
           ],

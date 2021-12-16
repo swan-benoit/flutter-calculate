@@ -4,7 +4,12 @@ import 'package:flutter/widgets.dart';
 class KeyboardButton extends StatefulWidget {
   bool isOutline;
   String content = '';
-  KeyboardButton({Key? key, this.isOutline = false, required this.content})
+  bool grow;
+  KeyboardButton(
+      {Key? key,
+      this.isOutline = false,
+      required this.content,
+      this.grow = false})
       : super(key: key);
 
   @override
@@ -15,7 +20,7 @@ class _KeyboardButtonState extends State<KeyboardButton> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: 1,
+      flex: widget.grow ? 2 : 1,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: widget.isOutline
