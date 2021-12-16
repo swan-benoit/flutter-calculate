@@ -19,6 +19,7 @@ class _Calculator extends State<Calculator> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: const [
        Padding(
           padding:EdgeInsets.fromLTRB(35.0, 20, 35.0, 15),
