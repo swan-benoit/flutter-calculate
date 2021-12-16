@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class CalculationDisplayer extends StatelessWidget {
-  const CalculationDisplayer({
+  String expression;
+  CalculationDisplayer({
     Key? key,
+    this.expression = ''
   }) : super(key: key);
 
   @override

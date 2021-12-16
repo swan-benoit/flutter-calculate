@@ -5,11 +5,13 @@ class KeyboardButton extends StatefulWidget {
   bool isOutline;
   String content = '';
   bool grow;
+  Function addToExpression;
   KeyboardButton(
       {Key? key,
       this.isOutline = false,
       required this.content,
-      this.grow = false})
+      this.grow = false,
+      required this.addToExpression})
       : super(key: key);
 
   @override
@@ -44,5 +46,7 @@ class _KeyboardButtonState extends State<KeyboardButton> {
     );
   }
 
-  void addToExpression() {}
+  void addToExpression() {
+    widget.addToExpression(widget.content);
+  }
 }

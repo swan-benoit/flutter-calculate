@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
             ),
           ],
         ),
-        body: const Calculator(),
+        body: Calculator(),
       ),
     );
   }

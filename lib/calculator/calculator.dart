@@ -4,7 +4,8 @@ import 'widgets/calculation-displayer.dart';
 
 
 class Calculator extends StatefulWidget {
-  const Calculator({Key? key}) : super(key: key);
+  String expression;
+  Calculator({Key? key, this.expression = ''}) : super(key: key);
 
   @override
   State<Calculator> createState() => _Calculator();
@@ -20,14 +21,18 @@ class _Calculator extends State<Calculator> {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
+      children: [
        Padding(
-          padding:EdgeInsets.fromLTRB(35.0, 20, 35.0, 15),
-          child: CalculationDisplayer(),
+          padding:const EdgeInsets.fromLTRB(35.0, 20, 35.0, 15),
+          child: CalculationDisplayer(expression: widget.expression,),
         )
-        , Keyboard()
+        , Keyboard(addToExpression: addToExpression,)
       ],
     );
+  }
+
+  addToExpression(String content) {
+    print(content);
   }
 }
 
