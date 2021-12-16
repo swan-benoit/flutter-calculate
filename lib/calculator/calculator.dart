@@ -38,7 +38,18 @@ class _Calculator extends State<Calculator> {
     if (isNumber(content)) {
       handleNumbers(content);
     }
+    if (isClear(content)) {
+      handleClear();
+    }
   }
+
+  void handleClear() {
+    setState(() {
+      widget.currentNumber = '';
+    });
+  }
+
+  bool isClear(String content) => content == 'C';
 
   bool isNumber(String content) => double.tryParse(content) != null;
 
