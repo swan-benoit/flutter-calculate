@@ -11,14 +11,7 @@ class KeyboardRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10.0),
-      child: Row(
-        children: children
-            .map((widget) => Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: widget,
-                ))
-            .toList(),
-      ),
+      child: Row(children: children),
     );
   }
 

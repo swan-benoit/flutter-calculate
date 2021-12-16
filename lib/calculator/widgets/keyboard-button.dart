@@ -8,10 +8,21 @@ class KeyboardButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        onPressed: addToExpression,
-        child: const Text('1'),
-        style: ElevatedButton.styleFrom(primary: Colors.amber));
+    return Expanded(
+      flex: 1,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ElevatedButton(
+            onPressed: addToExpression,
+            child: const Text(
+              '12',
+              style: TextStyle(fontSize: 15.0),
+            ),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.black,
+            )),
+      ),
+    );
   }
 
   void addToExpression() {}

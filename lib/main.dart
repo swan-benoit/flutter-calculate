@@ -21,7 +21,10 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           actions: [
             IconButton(
-              icon: const Icon(Icons.save),
+              icon: const Icon(
+                Icons.save,
+                color: Colors.black,
+              ),
               onPressed: () {
                 print("click");
               },
